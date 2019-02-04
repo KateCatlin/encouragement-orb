@@ -1,14 +1,7 @@
 version: 2.1
 
-jobs:
-  build:
-    docker:
-      - image: debian:stretch
-    steps:
-      - checkout
-      - run:
-          name: Greeting
-          command: echo Hello, world.
-      - run:
-          name: Print the Current Time
-          command: date
+orbs:
+  hello-build: circleci/hello-build@0.0.8
+
+jobs: 
+  - hello-build/hello-build
